@@ -4,7 +4,7 @@ A multi-label leaf disease classifier built with PyTorch and a pretrained ResNet
 
 ---
 
-## 📁 Folder Structure
+## Folder Structure
 
 ```
 KAGGLE/
@@ -13,15 +13,14 @@ KAGGLE/
 │   ├── test.csv            # Test image IDs
 │   └── images/             # All .jpg leaf images
 ├── output/
-│   └── sample_submission.csv
+│   └── submission.csv
 ├── plant_pathology.py      # Main training & inference script
-├── submission.csv          # Generated after training (OOF + test predictions)
 └── best_model_fold{n}.pth  # Best model checkpoint per fold (generated at runtime)
 ```
 
 ---
 
-## 🧠 Problem
+## Problem
 
 Multi-label classification of apple leaf images into 4 categories:
 
@@ -142,16 +141,4 @@ This will:
 
 ---
 
-## 💡 Tips for Improvement
 
-- **Swap backbone:** Replace `resnet50` with `efficientnet_b4` or `convnext_base` via `timm` for better accuracy
-- **TTA:** Apply test-time augmentation (horizontal flip) to boost inference AUC
-- **Mixup / CutMix:** Add label-mixing augmentation to reduce overfitting
-- **Larger image size:** Try `512×512` if VRAM allows
-- **Ensemble:** Average predictions from multiple architectures
-
----
-
-## 📄 License
-
-For Kaggle competition use. Dataset © Kaggle / original authors.
